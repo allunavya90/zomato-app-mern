@@ -27,7 +27,7 @@ function Search() {
   // pagination function
   const fetchProductsByPagination = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:4000/api/Pagination`);
+      const { data } = await axios.get(`https://zomato-clone-api-5pn0.onrender.com/api/Pagination`);
       setRestaurantList(data.products);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -67,7 +67,7 @@ function Search() {
   // getting location list data
   let getLocationList = async () => {
     try {
-      let url = "http://localhost:4000/api/get-location-list";
+      let url = "https://zomato-clone-api-5pn0.onrender.com/api/get-location-list";
       let response = await axios.get(url);
       let data = response.data;
       setLocations(data.result);
@@ -83,7 +83,7 @@ function Search() {
 
   // filter data functionality
   let getFilterDetails = async () => {
-    let url = "http://localhost:4000/api/filter";
+    let url = "https://zomato-clone-api-5pn0.onrender.com/api/filter";
     let { data } = await axios.post(url, filter);
     setRestaurantList(data.result);
   };
@@ -132,7 +132,7 @@ function Search() {
 
     try {
       const { data } = await axios.post(
-        `http://localhost:4000/api/filterPrice?priceRange=${selectedRange}`
+        `https://zomato-clone-api-5pn0.onrender.com/api/filterPrice?priceRange=${selectedRange}`
       );
       setRestaurantList(data.products);
     } catch (error) {
